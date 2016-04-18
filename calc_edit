@@ -1,0 +1,71 @@
+def error_a(vvod):
+    while True:
+        try:
+            a = int(input(vvod))
+            return a
+        except ValueError:
+            print("No number")
+            continue
+
+def error_b(last, vvod):
+    while True:
+        
+        y = input(vvod)    
+        print(last)
+        if y == "_":
+            y = last
+            return y
+        else:
+            try:
+                y = int(y)
+                return y
+            except ValueError:
+                print("No number")
+                continue
+        
+def error_sign():
+    while True:
+        sign = input("sign?")
+        if sign == "-" or sign == "+" or sign == "/" or sign == "*" or sign == "=":
+            return sign 
+        else:
+            print("Invalid sign")
+            continue
+        
+def Calculate():
+    x = 0
+    b = 0
+    last = 0
+    a = error_a("first?")
+    while True:
+        sign = error_sign()      
+        
+        b = error_b(last, "next?")
+        last = b
+        print(b)
+        print(last)
+        if sign == "-":
+            x = a - b 
+        elif sign == "+":
+            x = a + b
+        elif sign == "/":
+            x = a / b
+        elif sign == "*":
+            x = a * b
+        elif sign == "=":
+            print(x)
+            
+        print(x)
+        continue
+
+
+
+Calculate()
+    
+
+
+
+
+
+        
+        
